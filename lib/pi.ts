@@ -1,3 +1,4 @@
+"use client";
 export function payWithPi(amount: number, cb: { done: () => void; error: (e: any) => void }) {
   // @ts-ignore
   const Pi = (window as any).Pi;
@@ -6,7 +7,7 @@ export function payWithPi(amount: number, cb: { done: () => void; error: (e: any
     return;
   }
   Pi.createPayment(
-    { amount, memo: `SOSA Order ₦${amount}`, metadata: { amount } },
+    { amount, memo: "SOSA Order", metadata: { amount } },
     {
       onReadyForServerApproval: (paymentId: string) => {
         fetch("/api/pi/approve", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ paymentId }) });
@@ -21,3 +22,5 @@ export function payWithPi(amount: number, cb: { done: () => void; error: (e: any
     }
   );
 }
+export const initPi = () => {};
+export default payWithPi;
