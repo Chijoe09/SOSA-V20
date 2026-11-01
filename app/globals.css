@@ -1,0 +1,26 @@
+:root{--bg:#FFF8F0;--fg:#111;--card:#fff;--line:#e5d9cc;--acc:#E71D24}
+.dark{--bg:#0A0A0A;--fg:#FFF8F0;--card:#161616;--line:#2a2a2a}
+body{background:var(--bg);color:var(--fg);margin:0;font-family:system-ui,sans-serif}
+article{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;display:grid;gap:4px}
+button,select,input{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+button[aria-pressed=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+main{padding:12px;max-width:1100px;margin:auto}
+.grad{background:linear-gradient(90deg,#00A3D9,#E71D24,#009A33);-webkit-background-clip:text;background-clip:text;color:transparent}
+.overlay{position:fixed;inset:0;background:#000a;display:grid;place-items:center;z-index:50}
+.box{background:var(--card);width:calc(100% - 24px);max-width:520px;max-height:90vh;overflow:auto;border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}
+.cta{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:700;text-decoration:none;display:inline-block;text-align:center}
+.cta:disabled{opacity:.4}
+.badge{position:absolute;top:-6px;right:-6px;background:var(--acc);color:#fff;border-radius:99px;font-size:11px;padding:1px 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.row{display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--line);padding:6px 0}
+.slider{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:8px 72px;position:relative}
+.slider::-webkit-scrollbar{display:none}
+.slider button{white-space:nowrap;flex:none}
+.edge{position:absolute;top:50%;transform:translateY(-50%);z-index:5;background:var(--bg);color:#E71D24;border:1px solid #E71D24;font-weight:800;font-size:12px;padding:6px}
+.blink{animation:blink 1s infinite}@keyframes blink{50%{opacity:.3}}
+.note{background:#FFF3CD;color:#5c4400;padding:8px;border-radius:8px}
+.ok{color:#009A33}.out{color:#E71D24}
+.tag{background:var(--line);border-radius:99px;padding:2px 8px;font-size:12px}
+.chip{border:1px solid var(--line);border-radius:99px;padding:4px 10px;text-decoration:none;color:var(--fg)}.chip.off{opacity:.4}
+.card{border:1px solid var(--line);border-radius:10px;padding:10px}
+a{color:inherit}textarea{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
